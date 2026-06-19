@@ -1,131 +1,103 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Full Stack Training</title>
-    <style>
-        .font{
-            color:red;
-        }
-        p{
-            color:blue;
-        }
-    </style>
+    <title>My Blog Post</title>
 </head>
 <body>
-    <!-- heading tag -->
-    <h1>This is heading 1</h1>
-    <h2>This is heading 1</h2>
-    <h3>This is heading 1</h3>
-    <h4>This is heading 1</h4>
-    <h5>This is heading 1</h5>
-    <h6>This is heading 1</h6>
-    <!-- paragraph tag -->
-     <p>This is paragraph.</p>
 
-    <!-- Anchor tag -->
-     <a href="https://www.google.com/" target="_blank">Google website</a>
-     <!-- Image tag -->
-      <img src="https://www.britannica.com/animal/lion" alt="Lion">
-      <!-- List tag -->
-       <ul>
-        <li>Apple</li>
-        <li>Banana</li>
+    <header>
+        <h1>Tech Blog</h1>
+    </header>
 
-       </ul>
-       <ol type="A" >
-        <li>a</li>
-        <li>b</li>
-        <li>c</li>
-       </ol>
-       <dl>
-        <dt>Student</dt>
-        <dd>a student of gla university</dd>
-       </dl>
+    <nav>
+        <a href="#">Home</a> |
+        <a href="#">Articles</a> |
+        <a href="#">About</a> |
+        <a href="#">Contact</a>
+    </nav>
 
-       <!-- table -->
-        <table>
-            <tr>
-                <td>Name</td>
-                <td>Roll no</td>
-                <td>class</td>
+    <main>
 
-            </tr>
-            <tr>
-                <td>Ram</td>
-                <td>56</td>
-                <td>B.tech</td>
-            </tr>
-        
-        </table>
-        <table border="1">
-    <thead>
-        <tr>
-            <th>Roll No</th>
-            <th>Name</th>
-            <th>Marks</th>
-        </tr>
-    </thead>
+        <article>
+            <h2>Introduction to HTML5 Semantic Elements</h2>
 
-    <tbody>
-        <tr>
-            <td>101</td>
-            <td>Nitin</td>
-            <td>85</td>
-        </tr>
-        <tr>
-            <td>102</td>
-            <td>Rahul</td>
-            <td>90</td>
-        </tr>
-        <tr>
-            <td>103</td>
-            <td>Aman</td>
-            <td>78</td>
-        </tr>
-    </tbody>
+            <p>
+                Published on
+                <time datetime="2026-06-18">
+                    June 18, 2026
+                </time>
+            </p>
 
-    <tfoot>
-        <tr>
-            <td colspan="2">Average Marks</td>
-            <td>84.33</td>
-        </tr>
-    </tfoot>
-</table>
+            <p>
+                HTML5 introduced semantic elements that help developers
+                structure web pages more meaningfully.
+            </p>
 
-<!-- Formatting tab -->
-<p>this is <strong>paragraph</strong></p>
-<p>this is <i>paragraph 2</i></p>
+            <p>
+                Elements such as header, nav, main, article, aside, and footer
+                improve readability and accessibility.
+            </p>
 
-<!-- audio tag -->
- <audio src=""></audio>
- <!-- Inline Text Formatting -->
-  <strong>Required</strong>
-  <em>Note this</em>
-  <b>Bold</b>
-  <i>italic</i>
-  <del>Strikethrough</del>
-  <mark>Mark tag</mark>
-  X<sup>2</sup>
-  H<sub>2</sub>O
-  <code>let x =1;</code>
-  <pre>I am Nitin
-I am doing coding in pre tag
-  </pre>
-  <blockquote>Jai hind</blockquote>
-  <br>
-  <br>
-  <hr>
-  
+            <p>
+                Semantic HTML also helps search engines understand the content
+                of a webpage better.
+            </p>
+        </article>
 
+        <section>
+            <h2>Popular Programming Languages</h2>
 
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Language</th>
+                        <th>Creator</th>
+                        <th>Year</th>
+                    </tr>
+                </thead>
 
+                <tbody>
+                    <tr>
+                        <td>Python</td>
+                        <td>Guido van Rossum</td>
+                        <td>1991</td>
+                    </tr>
 
+                    <tr>
+                        <td>Java</td>
+                        <td>James Gosling</td>
+                        <td>1995</td>
+                    </tr>
 
+                    <tr>
+                        <td>JavaScript</td>
+                        <td>Brendan Eich</td>
+                        <td>1995</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
 
+    </main>
 
+    <aside>
+        <h2>Related Posts</h2>
 
+        <ul>
+            <li>Understanding HTML Basics</li>
+            <li>Introduction to CSS</li>
+            <li>Getting Started with JavaScript</li>
+            <li>Responsive Web Design</li>
+            <li>Accessibility in Web Development</li>
+        </ul>
+    </aside>
+
+    <footer>
+        <p>&copy; 2026 Tech Blog. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
