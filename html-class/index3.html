@@ -1,84 +1,139 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery Page</title>
+    <title>Complete HTML Form Example</title>
 </head>
 <body>
 
-    
-    <nav>
-        
-        <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">Google</a> |
+<h1>Student Registration Form</h1>
 
-        <!-- Relative Link -->
-        <a href="index.html">Index</a> |
+<form action="#" method="post">
 
-        
-        <a href="mailto:nitin2911.in@gmail.com">Email Us</a> |
+    <!-- Personal Details -->
+    <fieldset>
+        <legend>Personal Details</legend>
 
-        
-        <a href="#gallery">Go to Gallery</a>
-    </nav>
+        <label for="fn">First Name:</label>
+        <input type="text" id="fn" name="first_name" placeholder="Enter first name" required>
 
-    <hr>
+        <br>
+        <br>
 
-    
-    <h1 id="gallery">Image Gallery</h1>
+        <label for="ln">Last Name:</label>
+        <input type="text" id="ln" name="last_name" placeholder="Enter last name">
 
-    <figure>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlN0pd0gP2eXNFl9rPiRcjy_EAYFzPPVYegygiJwZ-vw&s=10" alt="Snow-covered mountain under blue sky" width="300">
-        <figcaption>Beautiful Mountain</figcaption>
-    </figure>
+        <br><br>
 
-    <figure>
-        <img src="https://static.vecteezy.com/system/resources/thumbnails/057/780/644/small_2x/idyllic-tropical-beach-scene-turquoise-water-white-sand-palm-trees-sunny-sky-free-photo.jpeg" alt="Sunny beach with palm trees" width="300">
-        <figcaption>Sunny Beach</figcaption>
-    </figure>
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email"
+               placeholder="user@example.com">
 
-    <figure>
-        <img src="https://images.stockcake.com/public/f/5/a/f5affe59-058f-4b20-961b-90b839d46bc6_large/endless-green-forest-stockcake.jpg" alt="Dense green forest with tall trees" width="300">
-        <figcaption>Green Forest</figcaption>
-    </figure>
+        <br><br>
 
-    <figure>
-        <img src="https://cdn.britannica.com/97/158797-050-ABECB32F/North-Cascades-National-Park-Lake-Ann-park.jpg?w=400&h=300&c=crop" alt="Calm lake surrounded by hills" width="300">
-        <figcaption>Peaceful Lake</figcaption>
-    </figure>
+        <label for="pass">Password:</label>
+        <input type="password" id="pass" name="password"
+               minlength="8">
 
-    <figure>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOkC0jFa-6webt_9N4eEgXCnxokP7N-j-QUybstMQZTg&s" alt="City skyline at night with lights" width="300">
-        <figcaption>City Lights</figcaption>
-    </figure>
+        <br><br>
 
-    <figure>
-        <img src="https://www.shutterstock.com/image-photo/amazing-desert-view-sunset-time-260nw-415337050.jpg" alt="Golden sand dunes in the desert" width="300">
-        <figcaption>Desert View</figcaption>
-    </figure>
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone"
+               pattern="[0-9]{10}"
+               placeholder="10-digit number">
 
-    <hr>
+        <br><br>
 
-    
-    <h2>Featured Video</h2>
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob">
 
-    <iframe
-        width="560"
-        height="315"
-        src="https://www.youtube.com/embed/vrkXlNUj8Gc"
-        title="YouTube video player"
-        allowfullscreen>
-    </iframe>
+    </fieldset>
 
-    <hr>
+    <br>
 
-    
-    <h2>Background Music</h2>
+    <!-- Gender -->
+    <fieldset>
+        <legend>Gender</legend>
 
-    <audio controls>
-        <source src="audio.mp3" type="audio/mpeg">
-        
-    </audio>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label>
+
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label>
+
+    </fieldset>
+
+    <br>
+
+    <!-- Skills -->
+    <fieldset>
+        <legend>Skills</legend>
+
+        <input type="checkbox" id="html" name="skill1" value="HTML">
+        <label for="html">HTML</label>
+
+        <input type="checkbox" id="css" name="skill2" value="CSS">
+        <label for="css">CSS</label>
+
+        <input type="checkbox" id="js" name="skill3" value="JavaScript">
+        <label for="js">JavaScript</label>
+
+    </fieldset>
+
+    <br>
+
+    <!-- Country -->
+    <label for="country">Country:</label>
+
+    <select id="country" name="country">
+        <option value="">-- Choose Country --</option>
+        <option value="in">India</option>
+        <option value="us">United States</option>
+        <option value="uk">United Kingdom</option>
+    </select>
+
+    <br><br>
+
+    <!-- Quantity -->
+    <label for="qty">Quantity:</label>
+    <input type="number" id="qty" name="quantity"
+           min="1" max="100">
+
+    <br><br>
+
+    <!-- Range -->
+    <label for="volume">Volume:</label>
+    <input type="range" id="volume" name="volume"
+           min="0" max="10">
+
+    <br><br>
+
+    <!-- File Upload -->
+    <label for="resume">Upload Resume:</label>
+    <input type="file" id="resume" name="resume"
+           accept=".pdf,.doc">
+
+    <br><br>
+
+    <!-- Textarea -->
+    <label for="bio">About Yourself:</label>
+    <br>
+
+    <textarea id="bio"
+              name="bio"
+              rows="5"
+              cols="40"
+              placeholder="Tell us about yourself...">
+    </textarea>
+
+    <br><br>
+
+    <!-- Buttons -->
+    <input type="submit" value="Register">
+
+    <input type="reset" value="Reset">
+
+</form>
 
 </body>
 </html>
