@@ -1,139 +1,104 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Complete HTML Form Example</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
 </head>
 <body>
 
-<h1>Student Registration Form</h1>
+    <h1>User Registration Form</h1>
 
-<form action="#" method="post">
+    <form method="POST">
 
-    <!-- Personal Details -->
-    <fieldset>
-        <legend>Personal Details</legend>
+        <!-- Personal Information -->
+        <fieldset>
+            <legend>Personal Info</legend>
 
-        <label for="fn">First Name:</label>
-        <input type="text" id="fn" name="first_name" placeholder="Enter first name" required>
+            <label for="name">Full Name:</label>
+            <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                minlength="2">
+            <br><br>
+
+            <label for="dob">Date of Birth:</label>
+            <input
+                type="date"
+                id="dob"
+                name="dob">
+            <br><br>
+
+            <label for="phone">Phone Number:</label>
+            <input
+                type="tel"
+                id="phone"
+                name="phone"
+                pattern="[0-9]{10}"
+                placeholder="10-digit number">
+            <br><br>
+
+            <p>Gender:</p>
+
+            <input type="radio" id="male" name="gender" value="Male">
+            <label for="male">Male</label>
+
+            <input type="radio" id="female" name="gender" value="Female">
+            <label for="female">Female</label>
+
+            <input type="radio" id="other" name="gender" value="Other">
+            <label for="other">Other</label>
+
+        </fieldset>
 
         <br>
+
+        <!-- Account Information -->
+        <fieldset>
+            <legend>Account Info</legend>
+
+            <label for="email">Email:</label>
+            <input
+                type="email"
+                id="email"
+                name="email"
+                required>
+            <br><br>
+
+            <label for="password">Password:</label>
+            <input
+                type="password"
+                id="password"
+                name="password"
+                required
+                minlength="8">
+            <br><br>
+
+            <label for="country">Country:</label>
+        
+            <select id="country" name="country">
+                <option value="">--Select Country--</option>
+                <option value="India">India</option>
+                <option value="USA">USA</option>
+                <option value="Canada">Canada</option>
+                <option value="UK">United Kingdom</option>
+            </select>
+            <br><br>
+
+            <label for="profile-pic">Profile Picture:</label>
+            <input
+                type="file"
+                id="profile-pic"
+                name="profile-pic">
+        </fieldset>
+
         <br>
 
-        <label for="ln">Last Name:</label>
-        <input type="text" id="ln" name="last_name" placeholder="Enter last name">
+        <button type="submit" >Register</button>
 
-        <br><br>
-
-        <label for="email">Email Address:</label>
-        <input type="email" id="email" name="email"
-               placeholder="user@example.com">
-
-        <br><br>
-
-        <label for="pass">Password:</label>
-        <input type="password" id="pass" name="password"
-               minlength="8">
-
-        <br><br>
-
-        <label for="phone">Phone Number:</label>
-        <input type="tel" id="phone" name="phone"
-               pattern="[0-9]{10}"
-               placeholder="10-digit number">
-
-        <br><br>
-
-        <label for="dob">Date of Birth:</label>
-        <input type="date" id="dob" name="dob">
-
-    </fieldset>
-
-    <br>
-
-    <!-- Gender -->
-    <fieldset>
-        <legend>Gender</legend>
-
-        <input type="radio" id="male" name="gender" value="male">
-        <label for="male">Male</label>
-
-        <input type="radio" id="female" name="gender" value="female">
-        <label for="female">Female</label>
-
-    </fieldset>
-
-    <br>
-
-    <!-- Skills -->
-    <fieldset>
-        <legend>Skills</legend>
-
-        <input type="checkbox" id="html" name="skill1" value="HTML">
-        <label for="html">HTML</label>
-
-        <input type="checkbox" id="css" name="skill2" value="CSS">
-        <label for="css">CSS</label>
-
-        <input type="checkbox" id="js" name="skill3" value="JavaScript">
-        <label for="js">JavaScript</label>
-
-    </fieldset>
-
-    <br>
-
-    <!-- Country -->
-    <label for="country">Country:</label>
-
-    <select id="country" name="country">
-        <option value="">-- Choose Country --</option>
-        <option value="in">India</option>
-        <option value="us">United States</option>
-        <option value="uk">United Kingdom</option>
-    </select>
-
-    <br><br>
-
-    <!-- Quantity -->
-    <label for="qty">Quantity:</label>
-    <input type="number" id="qty" name="quantity"
-           min="1" max="100">
-
-    <br><br>
-
-    <!-- Range -->
-    <label for="volume">Volume:</label>
-    <input type="range" id="volume" name="volume"
-           min="0" max="10">
-
-    <br><br>
-
-    <!-- File Upload -->
-    <label for="resume">Upload Resume:</label>
-    <input type="file" id="resume" name="resume"
-           accept=".pdf,.doc">
-
-    <br><br>
-
-    <!-- Textarea -->
-    <label for="bio">About Yourself:</label>
-    <br>
-
-    <textarea id="bio"
-              name="bio"
-              rows="5"
-              cols="40"
-              placeholder="Tell us about yourself...">
-    </textarea>
-
-    <br><br>
-
-    <!-- Buttons -->
-    <input type="submit" value="Register">
-
-    <input type="reset" value="Reset">
-
-</form>
-
+    </form>
+ 
 </body>
 </html>
