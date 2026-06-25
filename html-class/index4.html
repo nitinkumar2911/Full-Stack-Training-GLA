@@ -3,41 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        .parentcontainer{
-            height: 100vh;
-            flex-direction: row;
-            flex-wrap: wrap;
-           
+    <title>Uber Navbar Clone</title>
 
-            border: 2px #3700ff solid;
+    <style>
+      *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+      }
+      body{
+        font-family: Arial, sans-serif;
+      }
+      .navbar{
+        background-color: black;
+        height:64px;
+        display:flex;
+        justify-content: space-between;
+        align-items:center;
+        padding:0 40px;
+      }
+      .left ul{
+        display:flex;
+        align-items:center;
+        gap: 25px;
+        list-style: none;
+      }
+      .right ul{
+        display:flex;
+        align-items:center;
+        gap: 25px;
+        list-style: none;
+      }
+      .logo{
+        font-size: 24px;
+        font-weight: bold;
+        color:white;
+        margin-right:10px;
+      }
+      .left li{
+        color:white;
+        cursor:pointer;
+        padding: 8px 12 px;
+        border-radius: 20px;
+      }
+      .left li:hover{
+        background: colr #333;
+
+      }
+      .right ul{
             display:flex;
-            justify-content: start;
-            align-items:start ;
+            align-items:center;
+            gap:20px;
+            list-style:none;
         }
-        .box2{
-            order:-1;
+
+        .right li{
+            color:white;
+            cursor:pointer;
+            padding:8px 12px;
+            border-radius:20px;
         }
-        .container{
-            border: 1px black solid;
-            height: 200px;
-            width: 200px;
-            background-color: red;
-            
+
+        .right li:hover{
+            background-color:#333;
+        }
+
+        /* Sign Up Button */
+        .signup-btn{
+            background:white;
+            color:black;
+            border:none;
+            padding:10px 18px;
+            border-radius:25px;
+            font-weight:bold;
+            cursor:pointer;
+        }
+
+        .signup-btn:hover{
+            background:#e5e5e5;
         }
     </style>
 </head>
 <body>
-    <div class="parentcontainer">
-    <div class="container box1">1</div>
-    <div class="container box2">2</div>
-    <div class="container box3">3</div>
-     <div class="container box4">4</div>
-    <!-- <div class="container">3</div>
-    <div class="container">3</div>
-    <div class="container">3</div>
-    <div class="container">3</div> -->
-    </div>
+
+    <nav class="navbar">
+
+        <!-- Left Side -->
+        <div class="left">
+            <ul>
+                <li class="logo">Uber</li>
+                <li>Ride</li>
+                <li>Drive</li>
+                <li>Business</li>
+                <li>About</li>
+            </ul>
+        </div>
+
+        <!-- Right Side -->
+        <div class="right">
+            <ul>
+                <li>🌐 EN</li>
+                <li>Help</li>
+                <li>Log in</li>
+                <li>
+                    <button class="signup-btn">
+                        Sign up
+                    </button>
+                </li>
+            </ul>
+        </div>
+
+    </nav>
+
 </body>
 </html>
