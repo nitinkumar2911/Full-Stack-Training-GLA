@@ -55,25 +55,32 @@
 //  for(let i in numbers){
 //     console.log(i);
 //  }
-function checkEvenOdd(n){
-    if(n%2 ==0){
-        return "Even number";
-    }else{
-        return "Odd number";
-    }
+// function checkEvenOdd(n){
+//     if(n%2 ==0){
+//         return "Even number";
+//     }else{
+//         return "Odd number";
+//     }
+// }
+
+// console.log(checkEvenOdd(4))
+// function sum(a, b){
+//     return a+b;
+// }
+// console.log(sum(40, 60));
+
+// const greet  = function(name){
+//     console.log("hello "+ name)
+// };
+// greet("Nitin");
+
+
+// const square = (num) => num*num;
+// console.log(square(5));
+const student={
+    name:"Nitin",
+    class: "B.tech",
+    RollNo:46
 }
-
-console.log(checkEvenOdd(4))
-function sum(a, b){
-    return a+b;
-}
-console.log(sum(40, 60));
-
-const greet  = function(name){
-    console.log("hello "+ name)
-};
-greet("Nitin");
-
-
-const square = (num) => num*num;
-console.log(square(5));
+console.log(student.name);
+console.log(student["class"]);
