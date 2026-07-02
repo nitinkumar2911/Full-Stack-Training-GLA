@@ -15,43 +15,65 @@
 
 
 
-let students = ["Nitin", "Ram", "Rahul", "Krishna"];
-for(i = 0; i<students.length; i++){
-    console.log(students[i]);
+// let students = ["Nitin", "Ram", "Rahul", "Krishna"];
+// for(i = 0; i<students.length; i++){
+//     console.log(students[i]);
   
    
-}
-  students[1] = "xyz";
- console.log(students);
- students.push("Anjali");
- console.log(students);
- students.unshift("Anamika");
- console.log(students);
- students.pop()
- console.log(students);
- students.shift();
- console.log(students);
- let numbers = [1,2,3,4,5,6,7,8,9];
- for(let i = 0; i<numbers.length; i++){
-    if(numbers[i]%2 ===0){
-        continue;
-        console.log(`${numbers[i]} is a even number`);
+// }
+//   students[1] = "xyz";
+//  console.log(students);
+//  students.push("Anjali");
+//  console.log(students);
+//  students.unshift("Anamika");
+//  console.log(students);
+//  students.pop()
+//  console.log(students);
+//  students.shift();
+//  console.log(students);
+//  let numbers = [1,2,3,4,5,6,7,8,9];
+//  for(let i = 0; i<numbers.length; i++){
+//     if(numbers[i]%2 ===0){
+//         continue;
+//         console.log(`${numbers[i]} is a even number`);
         
 
-    }else{
-        console.log(`${numbers[i]} is an odd number`);
-    }
- }
- for(let number of numbers){
-     if(number%2 ===0){
-        console.log(`${number} is a even number`);
-        break;
+//     }else{
+//         console.log(`${numbers[i]} is an odd number`);
+//     }
+//  }
+//  for(let number of numbers){
+//      if(number%2 ===0){
+//         console.log(`${number} is a even number`);
+//         break;
 
-    }else{
-        console.log(`${number} is an odd number`);
-    }
+//     }else{
+//         console.log(`${number} is an odd number`);
+//     }
 
- }
- for(let i in numbers){
-    console.log(i);
- }
+//  }
+//  for(let i in numbers){
+//     console.log(i);
+//  }
+function checkEvenOdd(n){
+    if(n%2 ==0){
+        return "Even number";
+    }else{
+        return "Odd number";
+    }
+}
+
+console.log(checkEvenOdd(4))
+function sum(a, b){
+    return a+b;
+}
+console.log(sum(40, 60));
+
+const greet  = function(name){
+    console.log("hello "+ name)
+};
+greet("Nitin");
+
+
+const square = (num) => num*num;
+console.log(square(5));
