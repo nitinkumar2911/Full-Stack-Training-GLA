@@ -13,16 +13,73 @@
 // console.log(`isStudent: ${isStudent}, type: ${typeof isStudent}`);
 // console.log(`favouriteColor: ${favouriteColor}, type: ${typeof favouriteColor}`);
 // console.log(` pet: ${ pet}, type: ${typeof  pet}`);
-const num1 = 25;
-const num2 = 4;
-console.log(`Sum: ${num1 + num2}`);
-console.log(`Difference: ${num1 - num2}`);
-console.log(`Product: ${num1 * num2}`);
-console.log(`Quotient: ${num1 / num2}`);
-console.log(`Remainder: ${num1 % num2}`);
-console.log(`Power: ${num1 ** 2}`);
-console.log(num1 > num2); 
-console.log('5' === 5);
- console.log(10/3);
- let a =parseInt("100px");
- console.log(a+50);
+// const num1 = 25;
+// const num2 = 4;
+// console.log(`Sum: ${num1 + num2}`);
+// console.log(`Difference: ${num1 - num2}`);
+// console.log(`Product: ${num1 * num2}`);
+// console.log(`Quotient: ${num1 / num2}`);
+// console.log(`Remainder: ${num1 % num2}`);
+// console.log(`Power: ${num1 ** 2}`);
+// console.log(num1 > num2); 
+// console.log('5' === 5);
+//  console.log(10/3);
+//  let a =parseInt("100px");
+//  console.log(a+50);
+
+
+const score = 82; 
+if (score >= 90) {
+    console.log("Grade: A");
+} else if (score >= 80) {
+    console.log("Grade: B");
+} else if (score >= 70) {
+    console.log("Grade: C");
+} else if (score >= 60) {
+    console.log("Grade: D");
+} else {
+    console.log("Grade: F");
+}
+
+
+const dayNumber = 6;
+
+switch (dayNumber) {
+    case 1:
+
+        console.log("Monday");
+        break;
+
+    case 2:
+        console.log("Tuesday");
+        break;
+
+    case 3:
+        console.log("Wednesday");
+        break;
+
+    case 4:
+        console.log("Thursday");
+        break;
+
+    case 5:
+        console.log("Friday");
+        break;
+
+    case 6:
+        console.log("Saturday");
+        break;
+
+    case 7:
+        console.log("Sunday");
+        break;
+
+    default:
+        console.log("Invalid day number");
+}
+
+
+
+const isWeekend = (dayNumber === 6 || dayNumber === 7) ? "Yes" : "No";
+
+console.log("Is it a weekend?", isWeekend);
