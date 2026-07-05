@@ -154,39 +154,49 @@
 // const namePassed = students.filter(s =>s.score>=60).map(s=>s.name);
 // console.log(namePassed);
 
-const inventory = [
-{ name: 'Phone', price: 15000, category: 'Electronics', stock: 10 },
-{ name: 'Shirt', price: 800, category: 'Clothing', stock: 0 },
-{ name: 'Laptop', price: 55000, category: 'Electronics', stock: 5 },
-{ name: 'Shoes', price: 2000, category: 'Clothing', stock: 8 },
-];
-inventory.forEach(function(products){
-    console.log(` ${products.name} - Rs${products.price}  (${products.stock}  in stock)`);
-})
-const electronics =inventory.filter(products => products.category === "Electronics");
-console.log(electronics);
-const total = inventory.map(pro => pro.price*pro.stock).reduce((sum, curr)=>{
-    return sum + curr;
-},0);
-console.log(total);
+// const inventory = [
+// { name: 'Phone', price: 15000, category: 'Electronics', stock: 10 },
+// { name: 'Shirt', price: 800, category: 'Clothing', stock: 0 },
+// { name: 'Laptop', price: 55000, category: 'Electronics', stock: 5 },
+// { name: 'Shoes', price: 2000, category: 'Clothing', stock: 8 },
+// ];
+// inventory.forEach(function(products){
+//     console.log(` ${products.name} - Rs${products.price}  (${products.stock}  in stock)`);
+// })
+// const electronics =inventory.filter(products => products.category === "Electronics");
+// console.log(electronics);
+// const total = inventory.map(pro => pro.price*pro.stock).reduce((sum, curr)=>{
+//     return sum + curr;
+// },0);
+// console.log(total);
 
-const outOfStock = inventory.filter(products =>{
-    return products.stock === 0;
-}).forEach((pro)=>{
-    console.log(pro.name);
-})
+// const outOfStock = inventory.filter(products =>{
+//     return products.stock === 0;
+// }).forEach((pro)=>{
+//     console.log(pro.name);
+// })
 
-inventory.push({
-    name: "watch",
-    price: 800,
-    category: "accessories",
-    stock: 20
-})
-console.log(inventory);
-const disProduct = inventory.map(pro =>{
-    return {
-        ...pro,
-        price : pro.price*0.8,
-    }
+// inventory.push({
+//     name: "watch",
+//     price: 800,
+//     category: "accessories",
+//     stock: 20
+// })
+// console.log(inventory);
+// const disProduct = inventory.map(pro =>{
+//     return {
+//         ...pro,
+//         price : pro.price*0.8,
+//     }
+// });
+// console.log(disProduct);
+
+const greeting = document.querySelector('#greeting');
+const nameInput = document.querySelector('#nameInput');
+const colorBox = document.querySelector('#colorBox');
+const greetBtn = document.querySelector('#greetBtn');
+greetBtn.addEventListener('click', () => {
+const name = nameInput.value.trim() || 'Guest';
+greeting.textContent = `Hello, ${name}!`;
+colorBox.style.backgroundColor = 'teal';
 });
-console.log(disProduct);
