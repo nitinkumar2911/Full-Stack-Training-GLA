@@ -200,12 +200,27 @@
 // greeting.textContent = `Hello, ${name}!`;
 // colorBox.style.backgroundColor = 'teal';
 // });
-const playground = document.querySelector('#playground');
-const keyInput = document.querySelector('#keyInput');
-const status = document.querySelector('#status');
-playground.addEventListener("mousemove",(e) =>{
-    status.textContent = `Mouse position: X: ${e.clientX}, Y: ${e.clientY}`;
-});
-keyInput.addEventListener('keyup', (e) =>{
-    console.log(`User typed: ${e.key}  (Total Value: ${e.target.value})`);
+// const playground = document.querySelector('#playground');
+// const keyInput = document.querySelector('#keyInput');
+// const status = document.querySelector('#status');
+// playground.addEventListener("mousemove",(e) =>{
+//     status.textContent = `Mouse position: X: ${e.clientX}, Y: ${e.clientY}`;
+// });
+// keyInput.addEventListener('keyup', (e) =>{
+//     console.log(`User typed: ${e.key}  (Total Value: ${e.target.value})`);
+// });
+const form = document.querySelector("#regForm");
+const username = document.querySelector("#username");
+const usernameErr = document.querySelector("#usernameErr");
+form.addEventListener("submit", (e) =>{
+    e.preventDefault();
+    const val = username.value.trim();
+    if(val.length < 4){
+        usernameErr.textContent = "Username must be at least four characters long";
+        username.style.borderColor = "red";
+    } else{
+        usernameErr.textContent = "";
+        username.style.borderColor = "green";
+        alert("Form submitted successfully");
+    }
 });
