@@ -134,22 +134,59 @@
 // }
 // console.log(BMI(34,3.8));
 
-const students = [
-{ name: 'Rahul', score: 85 },
-{ name: 'Priya', score: 92 },
-{ name: 'Amit', score: 58 },
-{ name: 'Sneha', score: 73 },
+// const students = [
+// { name: 'Rahul', score: 85 },
+// { name: 'Priya', score: 92 },
+// { name: 'Amit', score: 58 },
+// { name: 'Sneha', score: 73 },
+// ];
+// const names = students.map(s => s.name);
+// console.log(names);
+// const passed = students.filter(s => s.score >=60);
+// console.log(passed);
+// const average = students.reduce((sum, c)=>{
+//   sum = sum+c.score;
+//   return sum;
+// },0)/students.length;
+// console.log(average);
+// const findName = students.find(s =>s.name === "Priya");
+// console.log(findName);
+// const namePassed = students.filter(s =>s.score>=60).map(s=>s.name);
+// console.log(namePassed);
+
+const inventory = [
+{ name: 'Phone', price: 15000, category: 'Electronics', stock: 10 },
+{ name: 'Shirt', price: 800, category: 'Clothing', stock: 0 },
+{ name: 'Laptop', price: 55000, category: 'Electronics', stock: 5 },
+{ name: 'Shoes', price: 2000, category: 'Clothing', stock: 8 },
 ];
-const names = students.map(s => s.name);
-console.log(names);
-const passed = students.filter(s => s.score >=60);
-console.log(passed);
-const average = students.reduce((sum, c)=>{
-  sum = sum+c.score;
-  return sum;
-},0)/students.length;
-console.log(average);
-const findName = students.find(s =>s.name === "Priya");
-console.log(findName);
-const namePassed = students.filter(s =>s.score>=60).map(s=>s.name);
-console.log(namePassed);
+inventory.forEach(function(products){
+    console.log(` ${products.name} - Rs${products.price}  (${products.stock}  in stock)`);
+})
+const electronics =inventory.filter(products => products.category === "Electronics");
+console.log(electronics);
+const total = inventory.map(pro => pro.price*pro.stock).reduce((sum, curr)=>{
+    return sum + curr;
+},0);
+console.log(total);
+
+const outOfStock = inventory.filter(products =>{
+    return products.stock === 0;
+}).forEach((pro)=>{
+    console.log(pro.name);
+})
+
+inventory.push({
+    name: "watch",
+    price: 800,
+    category: "accessories",
+    stock: 20
+})
+console.log(inventory);
+const disProduct = inventory.map(pro =>{
+    return {
+        ...pro,
+        price : pro.price*0.8,
+    }
+});
+console.log(disProduct);
