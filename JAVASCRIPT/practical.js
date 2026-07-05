@@ -110,26 +110,46 @@
 
 // }
 
-function add(a,b){
-    return a+b;
-}
-function subtract(a,b){
-    return a-b;
-}
-const multiply = (a, b) => a * b;
-const divide = (a,b) =>{
-    if(b ===0){
-        return "cannot divide by zero0";
+// function add(a,b){
+//     return a+b;
+// }
+// function subtract(a,b){
+//     return a-b;
+// }
+// const multiply = (a, b) => a * b;
+// const divide = (a,b) =>{
+//     if(b ===0){
+//         return "cannot divide by zero0";
 
-    }
-    return a/b;
+//     }
+//     return a/b;
 
-}
-console.log(add(5, 3));
-console.log(multiply(4, 6));
-console.log(divide(5,2));
+// }
+// console.log(add(5, 3));
+// console.log(multiply(4, 6));
+// console.log(divide(5,2));
 
-const BMI = (w,h)=>{
-    return w/(h*h);
-}
-console.log(BMI(34,3.8));
+// const BMI = (w,h)=>{
+//     return w/(h*h);
+// }
+// console.log(BMI(34,3.8));
+
+const students = [
+{ name: 'Rahul', score: 85 },
+{ name: 'Priya', score: 92 },
+{ name: 'Amit', score: 58 },
+{ name: 'Sneha', score: 73 },
+];
+const names = students.map(s => s.name);
+console.log(names);
+const passed = students.filter(s => s.score >=60);
+console.log(passed);
+const average = students.reduce((sum, c)=>{
+  sum = sum+c.score;
+  return sum;
+},0)/students.length;
+console.log(average);
+const findName = students.find(s =>s.name === "Priya");
+console.log(findName);
+const namePassed = students.filter(s =>s.score>=60).map(s=>s.name);
+console.log(namePassed);
