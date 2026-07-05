@@ -209,18 +209,36 @@
 // keyInput.addEventListener('keyup', (e) =>{
 //     console.log(`User typed: ${e.key}  (Total Value: ${e.target.value})`);
 // });
-const form = document.querySelector("#regForm");
-const username = document.querySelector("#username");
-const usernameErr = document.querySelector("#usernameErr");
-form.addEventListener("submit", (e) =>{
-    e.preventDefault();
-    const val = username.value.trim();
-    if(val.length < 4){
-        usernameErr.textContent = "Username must be at least four characters long";
-        username.style.borderColor = "red";
-    } else{
-        usernameErr.textContent = "";
-        username.style.borderColor = "green";
-        alert("Form submitted successfully");
+// const form = document.querySelector("#regForm");
+// const username = document.querySelector("#username");
+// const usernameErr = document.querySelector("#usernameErr");
+// form.addEventListener("submit", (e) =>{
+//     e.preventDefault();
+//     const val = username.value.trim();
+//     if(val.length < 4){
+//         usernameErr.textContent = "Username must be at least four characters long";
+//         username.style.borderColor = "red";
+    // } else{
+    //     usernameErr.textContent = "";
+    //     username.style.borderColor = "green";
+    //     alert("Form submitted successfully");
+    // }
+//});
+
+
+function createSecureAccount(ownerName){
+    let balance = 0;
+    return {
+        deposit: (amount) =>{
+            balance += amount;
+            console.log(`${ownerName} deposited Rs${amount}. Balance: Rs${balance}`);
+
+        },
+        getBalance: () => balance,
     }
-});
+}
+const myAccount = createSecureAccount('Rahul');
+myAccount.deposit(1000);
+myAccount.deposit(500);
+console.log(`Current Balance: Rs${myAccount.getBalance()}`);
+console.log(myAccount.balance);
