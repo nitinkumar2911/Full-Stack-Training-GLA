@@ -84,28 +84,52 @@
 
 // console.log("Is it a weekend?", isWeekend);
 
-for(let i= 1; i<=30;i++){
-    if(i%3 === 0 && i%5 ===0){
-        console.log("FizzBuzz");
-    }else if(i%3 ===0){
-        console.log("Fizz");
-    }else if(i%5 ===0){
-        console.log("Buzz");
-    }else{
-        console.log(i);
-    }
+// for(let i= 1; i<=30;i++){
+//     if(i%3 === 0 && i%5 ===0){
+//         console.log("FizzBuzz");
+//     }else if(i%3 ===0){
+//         console.log("Fizz");
+//     }else if(i%5 ===0){
+//         console.log("Buzz");
+//     }else{
+//         console.log(i);
+//     }
+// }
+// let i =1;
+// while(i<=30){
+//     if(i%3 === 0 && i%5 ===0){
+//         console.log("FizzBuzz");
+//     }else if(i%3 ===0){
+//         console.log("Fizz");
+//     }else if(i%5 ===0){
+//         console.log("Buzz");
+//     }else{
+//         console.log(i);
+//     }
+//     i++;
+
+// }
+
+function add(a,b){
+    return a+b;
 }
-let i =1;
-while(i<=30){
-    if(i%3 === 0 && i%5 ===0){
-        console.log("FizzBuzz");
-    }else if(i%3 ===0){
-        console.log("Fizz");
-    }else if(i%5 ===0){
-        console.log("Buzz");
-    }else{
-        console.log(i);
+function subtract(a,b){
+    return a-b;
+}
+const multiply = (a, b) => a * b;
+const divide = (a,b) =>{
+    if(b ===0){
+        return "cannot divide by zero0";
+
     }
-    i++;
+    return a/b;
 
 }
+console.log(add(5, 3));
+console.log(multiply(4, 6));
+console.log(divide(5,2));
+
+const BMI = (w,h)=>{
+    return w/(h*h);
+}
+console.log(BMI(34,3.8));
