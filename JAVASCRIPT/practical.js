@@ -191,12 +191,21 @@
 // });
 // console.log(disProduct);
 
-const greeting = document.querySelector('#greeting');
-const nameInput = document.querySelector('#nameInput');
-const colorBox = document.querySelector('#colorBox');
-const greetBtn = document.querySelector('#greetBtn');
-greetBtn.addEventListener('click', () => {
-const name = nameInput.value.trim() || 'Guest';
-greeting.textContent = `Hello, ${name}!`;
-colorBox.style.backgroundColor = 'teal';
+// const greeting = document.querySelector('#greeting');
+// const nameInput = document.querySelector('#nameInput');
+// const colorBox = document.querySelector('#colorBox');
+// const greetBtn = document.querySelector('#greetBtn');
+// greetBtn.addEventListener('click', () => {
+// const name = nameInput.value.trim() || 'Guest';
+// greeting.textContent = `Hello, ${name}!`;
+// colorBox.style.backgroundColor = 'teal';
+// });
+const playground = document.querySelector('#playground');
+const keyInput = document.querySelector('#keyInput');
+const status = document.querySelector('#status');
+playground.addEventListener("mousemove",(e) =>{
+    status.textContent = `Mouse position: X: ${e.clientX}, Y: ${e.clientY}`;
+});
+keyInput.addEventListener('keyup', (e) =>{
+    console.log(`User typed: ${e.key}  (Total Value: ${e.target.value})`);
 });
