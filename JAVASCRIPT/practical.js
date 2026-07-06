@@ -226,19 +226,42 @@
 //});
 
 
-function createSecureAccount(ownerName){
-    let balance = 0;
-    return {
-        deposit: (amount) =>{
-            balance += amount;
-            console.log(`${ownerName} deposited Rs${amount}. Balance: Rs${balance}`);
+// function createSecureAccount(ownerName){
+//     let balance = 0;
+//     return {
+//         deposit: (amount) =>{
+//             balance += amount;
+//             console.log(`${ownerName} deposited Rs${amount}. Balance: Rs${balance}`);
 
-        },
-        getBalance: () => balance,
+//         },
+//         getBalance: () => balance,
+//     }
+// }
+// const myAccount = createSecureAccount('Rahul');
+// myAccount.deposit(1000);
+// myAccount.deposit(500);
+// console.log(`Current Balance: Rs${myAccount.getBalance()}`);
+// console.log(myAccount.balance);
+
+const defaultSettings = { theme: 'light', showSidebar: true, maxItems: 10 };
+const userSettings = { theme: 'dark', showSidebar: false };
+const finalSettings = { ...defaultSettings, ...userSettings };
+console.log(finalSettings);
+const { theme, maxItems } = finalSettings;
+console.log(`Active theme: ${theme}, Max Items: ${maxItems}`);
+function getMinMax(...numbers){
+    let min = numbers[0];
+    let max = numbers[0];
+    for(let i =0; i<numbers.length; i++){
+        if(numbers[i] <min){
+            min = numbers[i];
+        }
+        if(numbers[i] >max){
+            max = numbers[i];
+        }
     }
+    return [min, max];
 }
-const myAccount = createSecureAccount('Rahul');
-myAccount.deposit(1000);
-myAccount.deposit(500);
-console.log(`Current Balance: Rs${myAccount.getBalance()}`);
-console.log(myAccount.balance);
+const [min, max] = getMinMax(25, 8, 15, 42, 3, 19);
+console.log("Minimum ", min);
+console.log("Maximum: ", max);
