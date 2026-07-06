@@ -275,15 +275,22 @@
 // const cartTotal = purchases.filter(p =>p.inStock).map(p=> p.price*p.count).reduce((sum, current) => sum + current, 0);
 // console.log(`Total payment required: Rs ${cartTotal}`);
 
-function parseConfiguration(jsonString){
-    try{
-        const config = JSON.parse(jsonString);
-        console.log('Configuration loaded successfully:', config);
-        return config;
-    }catch(error){
-        console.error('Failed to parse config. Using default settings.');
-        return { theme: 'light', autoSave: true };
-    }
+// 
+function simulateFetchProduct(){
+    return new Promise((resolve) =>{
+
+        setTimeout(()=>{
+            resolve({id:101, title: 'Wireless Headphones', price: 2999});
+        },1500);
+
+
+ } );
+
 }
-parseConfiguration('{"theme":"dark"}');
-parseConfiguration('{"theme": "dark",}');
+async function showProductDetails() {
+console.log('Fetching product details...');
+const product = await simulateFetchProduct();
+console.log(`Product: ${product.title} costs Rs ${product.price}`);
+}
+showProductDetails();
+
