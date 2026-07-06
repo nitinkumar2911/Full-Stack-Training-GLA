@@ -243,25 +243,34 @@
 // console.log(`Current Balance: Rs${myAccount.getBalance()}`);
 // console.log(myAccount.balance);
 
-const defaultSettings = { theme: 'light', showSidebar: true, maxItems: 10 };
-const userSettings = { theme: 'dark', showSidebar: false };
-const finalSettings = { ...defaultSettings, ...userSettings };
-console.log(finalSettings);
-const { theme, maxItems } = finalSettings;
-console.log(`Active theme: ${theme}, Max Items: ${maxItems}`);
-function getMinMax(...numbers){
-    let min = numbers[0];
-    let max = numbers[0];
-    for(let i =0; i<numbers.length; i++){
-        if(numbers[i] <min){
-            min = numbers[i];
-        }
-        if(numbers[i] >max){
-            max = numbers[i];
-        }
-    }
-    return [min, max];
-}
-const [min, max] = getMinMax(25, 8, 15, 42, 3, 19);
-console.log("Minimum ", min);
-console.log("Maximum: ", max);
+// const defaultSettings = { theme: 'light', showSidebar: true, maxItems: 10 };
+// const userSettings = { theme: 'dark', showSidebar: false };
+// const finalSettings = { ...defaultSettings, ...userSettings };
+// console.log(finalSettings);
+// const { theme, maxItems } = finalSettings;
+// console.log(`Active theme: ${theme}, Max Items: ${maxItems}`);
+// function getMinMax(...numbers){
+//     let min = numbers[0];
+//     let max = numbers[0];
+//     for(let i =0; i<numbers.length; i++){
+//         if(numbers[i] <min){
+//             min = numbers[i];
+//         }
+//         if(numbers[i] >max){
+//             max = numbers[i];
+//         }
+//     }
+//     return [min, max];
+// }
+// const [min, max] = getMinMax(25, 8, 15, 42, 3, 19);
+// console.log("Minimum ", min);
+// console.log("Maximum: ", max);
+const purchases = [
+{ item: 'Keyboard', price: 1200, count: 2, inStock: true },
+{ item: 'Mouse Pad', price: 300, count: 1, inStock: true },
+{ item: 'Monitor', price: 12000, count: 1, inStock: false },
+{ item: 'USB Hub', price: 600, count: 3, inStock: true },
+];
+
+const cartTotal = purchases.filter(p =>p.inStock).map(p=> p.price*p.count).reduce((sum, current) => sum + current, 0);
+console.log(`Total payment required: Rs ${cartTotal}`);
