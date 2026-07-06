@@ -276,21 +276,43 @@
 // console.log(`Total payment required: Rs ${cartTotal}`);
 
 // 
-function simulateFetchProduct(){
-    return new Promise((resolve) =>{
+// function simulateFetchProduct(){
+//     return new Promise((resolve) =>{
 
-        setTimeout(()=>{
-            resolve({id:101, title: 'Wireless Headphones', price: 2999});
-        },1500);
+//         setTimeout(()=>{
+//             resolve({id:101, title: 'Wireless Headphones', price: 2999});
+//         },1500);
 
 
- } );
+//  } );
 
-}
-async function showProductDetails() {
-console.log('Fetching product details...');
-const product = await simulateFetchProduct();
-console.log(`Product: ${product.title} costs Rs ${product.price}`);
-}
-showProductDetails();
+// }
+// async function showProductDetails() {
+// console.log('Fetching product details...');
+// const product = await simulateFetchProduct();
+// console.log(`Product: ${product.title} costs Rs ${product.price}`);
+// }
+// showProductDetails();
+const btn =document.querySelector('#fetchUserBtn');
+const card = document.querySelector('#userCard');
+const card1 = document.querySelector('#card1');
+btn.addEventListener('click', async () =>{
+    card.innerHTML = 'Loading user...';
+    try{
+        const res = await fetch('https://randomuser.me/api/');
+        const data = await res.json();
+        const user = data.results[0];
+        const user1 = data.results[1];
+        card.innerHTML = `<img src="${user.picture.medium}">
+        <h3>${user.name.first} ${user.name.last}</h3>
+        <p>email: ${user.email}</p>
+        `;
+        // card1.innerHTML = `<img src="${user1.picture.medium}">
+        // <h3>${user1.name.first} ${user1.name.last}</h3>
+        // <p>email: ${user1.email}</p>`;
+        
+    }catch (err){
+        card.innerHTML = 'Failed to load user.';
+    }
+});
 
