@@ -265,12 +265,25 @@
 // const [min, max] = getMinMax(25, 8, 15, 42, 3, 19);
 // console.log("Minimum ", min);
 // console.log("Maximum: ", max);
-const purchases = [
-{ item: 'Keyboard', price: 1200, count: 2, inStock: true },
-{ item: 'Mouse Pad', price: 300, count: 1, inStock: true },
-{ item: 'Monitor', price: 12000, count: 1, inStock: false },
-{ item: 'USB Hub', price: 600, count: 3, inStock: true },
-];
+// const purchases = [
+// { item: 'Keyboard', price: 1200, count: 2, inStock: true },
+// { item: 'Mouse Pad', price: 300, count: 1, inStock: true },
+// { item: 'Monitor', price: 12000, count: 1, inStock: false },
+// { item: 'USB Hub', price: 600, count: 3, inStock: true },
+// ];
 
-const cartTotal = purchases.filter(p =>p.inStock).map(p=> p.price*p.count).reduce((sum, current) => sum + current, 0);
-console.log(`Total payment required: Rs ${cartTotal}`);
+// const cartTotal = purchases.filter(p =>p.inStock).map(p=> p.price*p.count).reduce((sum, current) => sum + current, 0);
+// console.log(`Total payment required: Rs ${cartTotal}`);
+
+function parseConfiguration(jsonString){
+    try{
+        const config = JSON.parse(jsonString);
+        console.log('Configuration loaded successfully:', config);
+        return config;
+    }catch(error){
+        console.error('Failed to parse config. Using default settings.');
+        return { theme: 'light', autoSave: true };
+    }
+}
+parseConfiguration('{"theme":"dark"}');
+parseConfiguration('{"theme": "dark",}');
