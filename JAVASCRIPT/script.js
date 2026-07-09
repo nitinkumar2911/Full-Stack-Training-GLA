@@ -77,10 +77,26 @@
 
 // const square = (num) => num*num;
 // console.log(square(5));
-const student={
-    name:"Nitin",
-    class: "B.tech",
-    RollNo:46
+// const student={
+//     name:"Nitin",
+//     class: "B.tech",
+//     RollNo:46
+// }
+// console.log(student.name);
+// console.log(student["class"]);
+let promise = new Promise(
+function(resolve, rejected){
+    let success = false;
+    if(success){
+        resolve("Payment successs");
+    }else{
+        rejected("Payment failed");
+    }
+
 }
-console.log(student.name);
-console.log(student["class"]);
+);
+promise.then(function(result){
+    console.log(result);
+}).catch(function(error){
+    console.log(error);
+})
