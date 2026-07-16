@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Weather App</title>
+  <style>
+    /* Basic, clean layout styling */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f4f8;
+      color: #11154d;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    /* Simple, flat app container */
+    main {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 350px;
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 0;
+      color: #315da9;
+    }
+
+    /* Form and Inputs */
+    form {
+      margin-bottom: 20px;
+    }
+
+    input {
+      padding: 10px;
+      width: 70%;
+      border: 1px solid #a06464;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 10px 15px;
+      background-color: #3182ce;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #2b6cb0;
+    }
+
+    /* Weather Output Sections */
+    #errorMessage {
+      color: red;
+      margin-bottom: 10px;
+    }
+
+    #weatherResult {
+      margin-top: 20px;
+    }
+
+    .temp-display {
+      font-size: 48px;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+
+    .weather-details {
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 1px solid #eee;
+      text-align: left;
+    }
+
+    .weather-details p {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <main>
+    <h1>Weather App</h1>
+
+    <form id="weatherForm">
+      <input type="text" id="cityInput" placeholder="Enter city name..." required>
+      <button type="submit">Go</button>
+    </form>
+
+    <p id="errorMessage" style="display: none;">City not found. Try again.</p>
+
+    <section id="weatherResult" style="display: none;">
+      <h2 id="cityName">City Name</h2>
+      <img id="weatherIcon" src="" alt="Weather Icon">
+      <div class="temp-display"><span id="temperature">0</span>°C</div>
+      <p id="description">Condition</p>
+
+      <div class="weather-details">
+        <p><strong>Wind:</strong> <span id="wind">0</span> km/h</p>
+        <p><strong>Humidity:</strong> <span id="humidity">0</span>%</p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // 1. Setup Configuration (Put your WeatherAPI key here)
+    const API_KEY = '636e4b93c9654c1eb1842744261407';
+    const API_URL = 'https://api.weatherapi.com/v1/current.json';
+
+    // 2. Grab DOM elements
+    const weatherForm = document.getElementById('weatherForm');
+    const cityInput = document.getElementById('cityInput');
+    const errorMessage = document.getElementById('errorMessage');
+    const weatherResult = document.getElementById('weatherResult');
+
+    const cityName = document.getElementById('cityName');
+    const weatherIcon = document.getElementById('weatherIcon');
+    const temperature = document.getElementById('temperature');
+    const description = document.getElementById('description');
+    const wind = document.getElementById('wind');
+    const humidity = document.getElementById('humidity');
+
+    // 3. Listen for the form submit
+    weatherForm.addEventListener('submit', async (event) => {
+      event.preventDefault(); // Stop page from refreshing
+      
+      const city = cityInput.value.trim();
+
+      
+
+      try {
+        // Hide error and previous result before fetching
+        errorMessage.style.display = 'none';
+        weatherResult.style.display = 'none';
+
+        // Fetch the data from the API
+        const response = await fetch(`${API_URL}?key=${API_KEY}&q=${encodeURIComponent(city)}`);
+        
+        if (!response.ok) {
+          throw new Error("City not found");
+        }
+
+        const data = await response.json();
+
+        // 4. Update the HTML elements with live data
+        cityName.textContent = `${data.location.name}, ${data.location.country}`;
+        weatherIcon.src = `https:${data.current.condition.icon}`;
+        temperature.textContent = Math.round(data.current.temp_c);
+        description.textContent = data.current.condition.text;
+        wind.textContent = data.current.wind_kph;
+        humidity.textContent = data.current.humidity;
+
+        // Reveal the weather layout
+        weatherResult.style.display = 'block';
+
+      } catch (error) {
+        // Show error message if something went wrong
+        errorMessage.style.display = 'block';
+      }
+    });
+  </script>
+
+</body>
+</html>
