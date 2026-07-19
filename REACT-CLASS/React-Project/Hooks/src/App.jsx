@@ -2,22 +2,35 @@ import { useState, useEffect} from 'react'
 
 
 function App() {
-  const [count, setCount] = useState(0);
-  const [calculation, setCalculation] = useState(0);
+  const [user, setUser] = useState("Nitin");
 
-  useEffect(() => {
-    setCalculation(() => count * 2);
-  }, [count]);
 
+  
 
   return (
     <>
-    <p>Count: {count}</p>
-      <button onClick={() => setCount((c) => c + 1)}>+</button>
-      <p>Calculation: {calculation}</p>
+     <h1>{`Hello ${user}!`}</h1>
+      <Component2 user={user} />
       
     </>
   )
+}
+function Component2({ user }) {
+  return (
+    <>
+      <h1>Component 2</h1>
+      <Component3 user={user} />
+    </>
+  );
+}
+
+function Component3({ user }) {
+  return (
+    <>
+      <h1>Component 3</h1>
+      <h2>{`Hello ${user} again!`}</h2>
+    </>
+  );
 }
 
 export default App
