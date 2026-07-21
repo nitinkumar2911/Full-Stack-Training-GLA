@@ -1,37 +1,23 @@
-import { useState, createContext, useContext } from 'react';
-const UserContext = createContext();
+import { useRef, useState, useEffect } from 'react';
 
 
 function App() {
-  const [user, setUser] = useState("Nitin");
+  const [inputValue, setInputValue] = useState("");
+  const previousInputValue = useRef("");
 
-
-  
+  useEffect(() => {
+    previousInputValue.current = inputValue;
+  }, [inputValue]);
 
   return (
     <>
-    <UserContext.Provider value={user}>
-     <h1>{`Hello ${user}!`}</h1>
-      <Component2 />
-      </UserContext.Provider>
-    </>
-  )
-}
-function Component2() {
-  return (
-    <>
-      <h1>Component 2</h1>
-      <Component3 />
-    </>
-  );
-}
-
-function Component3() {
-  const user = useContext(UserContext);
-  return (
-    <>
-      <h1>Component 3</h1>
-      <h2>{`Hello ${user} again!`}</h2>
+      <input
+        type="text"
+        value={inputValue}
+        onChange={(e) => setInputValue(e.target.value)}
+      />
+      <h2>Current Value: {inputValue}</h2>
+      <h2>Previous Value: {previousInputValue.current}</h2>
     </>
   );
 }
