@@ -1,25 +1,34 @@
-import { useRef, useState, useEffect } from 'react';
+import { useReducer } from "react";
 
+function reducer(state, action) {
+  switch (action.type) {
+    case "INCREMENT":
+      return state + 1;
+
+    case "DECREMENT":
+      return state - 1;
+
+    default:
+      return state;
+  }
+}
 
 function App() {
-  const [inputValue, setInputValue] = useState("");
-  const previousInputValue = useRef("");
-
-  useEffect(() => {
-    previousInputValue.current = inputValue;
-  }, [inputValue]);
+  const [count, dispatch] = useReducer(reducer, 0);
 
   return (
     <>
-      <input
-        type="text"
-        value={inputValue}
-        onChange={(e) => setInputValue(e.target.value)}
-      />
-      <h2>Current Value: {inputValue}</h2>
-      <h2>Previous Value: {previousInputValue.current}</h2>
+      <h1>{count}</h1>
+
+      <button onClick={() => dispatch({ type: "INCREMENT" })}>
+        +
+      </button>
+
+      <button onClick={() => dispatch({ type: "DECREMENT" })}>
+        -
+      </button>
     </>
   );
 }
 
-export default App
+export default App;
